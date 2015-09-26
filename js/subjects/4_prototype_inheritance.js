@@ -10,7 +10,7 @@ presentation.present('an object has a prototype', function () {
 // -------------------------------------------------------------------------------------------------------------------
 
 
-presentation.present('the prototype can be used to share properties and methods between instances of a constructor', function () {
+presentation.present('the prototype can be used to share properties and methods between instances of a constructor function', function () {
 
     /**
      * @param {String} name
@@ -41,6 +41,13 @@ presentation.present('the prototype can be used to share properties and methods 
     console.log('instances:', firstDog, secondDog);
     console.log('exact the same method is re-used for both instances:', firstDog.greet === secondDog.greet);
     console.log('each instance has it\'s own getName method in memory:', firstDog.getName !== secondDog.getName);
+
+    // you are not supposed to access properties of __proto__ directly, that is why they are prefixed with __
+    console.log(
+        'the instances shares the same prototype with the constructor function used to create them',
+        firstDog.__proto__ === Dog.prototype,
+        secondDog.__proto__ === Dog.prototype
+    );
 });
 
 
