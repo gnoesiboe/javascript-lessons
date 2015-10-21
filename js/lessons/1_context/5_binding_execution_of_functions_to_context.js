@@ -1,4 +1,4 @@
-// binding execution of functions to objects to influence where this points to within the function
+// you can bind the context of functions to objects, to have the `this` keyword within the function point to that object
 
 var dutchGuy = {
     introText: 'hallo'
@@ -12,8 +12,8 @@ var sayHello = function (firstName, lastName) {
     console.log(this.introText + ' ' + firstName + ' ' + lastName);
 };
 
-// introText is undefined when called seperately, as this points to the global object (or window in browser), and it has no introText property
-sayHello('pietje', 'puk'); 
+// introText is 'undefined' when called seperately, as 'this' points to the global object (or window in browser), and the global object has no introText property!
+sayHello('pietje', 'puk');
 
 // use apply and provide arguments as array
 sayHello.apply(dutchGuy, ['pietje', 'puk']);

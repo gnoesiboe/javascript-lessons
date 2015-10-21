@@ -1,7 +1,5 @@
-// a function that can be used to construct an object using the `new` keyword, is called
-// a Constructor Function. To communicate that it is, it's first letter is always a capital.
-// Within the constructor function, this points to the object that is to be created with
-// it.
+// a function that can be used to construct an object using the `new` keyword, is called a Constructor Function. To communicate that it is, it's first letter is always a capital.
+// Within the constructor function, this points to the object that is to be created with it.
 
 /**
  * @param {String} a
@@ -9,6 +7,8 @@
  * @constructor
  */
 var SomeConstructor= function (a) {
+
+    // the created object has an 'a' property with the the supplied value
     this.a = a;
 };
 

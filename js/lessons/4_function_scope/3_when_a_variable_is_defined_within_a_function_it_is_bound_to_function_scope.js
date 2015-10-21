@@ -7,4 +7,4 @@ var someFunction = function () {
 };
 
 someFunction();
-console.log('is accessible outside the function', typeof test !== 'undefined');
+console.log('is accessible outside the function', typeof someVariable !== 'undefined');

@@ -1,5 +1,4 @@
-// using self calling functions we can influence which properties/methods are publicaly accessible
-// (private and public principle)
+// using self calling functions we can influence which properties are publicaly accessible (private and public principle). This pattern is called the 'module pattern'
 
 var someObject = (function () {
 
@@ -14,8 +13,7 @@ var someObject = (function () {
     };
 
     // returns the public interface that is visible to the outside world. Methods in this object
-    // have access to the private properties above, as they are in the same function (function
-    // scope)
+    // have access to the private properties above, as they are in the same function scope
     return {
 
         /**
