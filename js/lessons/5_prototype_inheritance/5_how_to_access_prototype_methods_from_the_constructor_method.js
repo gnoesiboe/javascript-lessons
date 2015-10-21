@@ -14,8 +14,8 @@ var Donkey = function (name) {
      */
     this.name = null;
 
-    // if we don't use apply, the init method's 'this' will
-    // point to Object instead of our donkey instance
+    // if we don't use apply, the init method's 'this' will point to Object() instead of our donkey instance, as we are
+    // still in de process of creating this object.
     Donkey.prototype.init.apply(this, arguments);
 };
 
@@ -24,8 +24,7 @@ var Donkey = function (name) {
  */
 Donkey.prototype.init = function (name) {
 
-    // when correctly called, 'this' points to the instance created
-    // with the constructor method
+    // when correctly called, 'this' points to the instance created with the constructor method
     this.name = name + ' the donkey';
 };
 

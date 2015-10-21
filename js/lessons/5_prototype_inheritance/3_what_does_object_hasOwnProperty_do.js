@@ -1,5 +1,10 @@
 // Object.hasOwnProperty checks if the object itself has a property, as by default
 
+/**
+ * @param {String} name
+ *
+ * @constructor
+ */
 var Duck = function (name) {
     this.name = name;
 };
@@ -11,10 +16,11 @@ var myDuck = new Duck('Klaartje');
 // we have direct access to the value on the object (instance)
 console.log('name:', myDuck.name);
 
-// we also have direct access to the value set on the prototype, via the instance
+// we also have direct access to the value set on the prototype, via the instance. The javascript interpreter first
+// checks if it's available on the instance, if not, it goes down the prototype chain to try to get it.
 console.log('type of animal:', myDuck.typeOfAnimal);
 
-// logs all properties, including properties in prototype
+// logs all properties, including properties in prototype!
 console.log('All properties of myDuck (including prototype):');
 for (var key in myDuck) {
     console.log(' - ' + myDuck[key]);

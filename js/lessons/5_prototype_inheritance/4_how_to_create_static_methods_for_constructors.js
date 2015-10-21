@@ -1,4 +1,4 @@
-// 'Static' methods (methods that do not apply to an instance) can also be used, by applying
+// 'Static' methods (methods that do not apply to an instance, but to the type/blueprint) can also be used, by applying
 // them to the Constructor function directly
 
 /**

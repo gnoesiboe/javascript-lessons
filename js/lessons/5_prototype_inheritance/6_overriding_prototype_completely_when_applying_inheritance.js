@@ -1,3 +1,5 @@
+// the prototype can be used to apply inheritance
+
 /**
  * Our base constructor
  *
@@ -35,18 +37,17 @@ var Dog = function (name, type) {
      */
     this.type = type;
 
-    // as we assign a new instance of Animal as prototype (see below) we
-    // still need to be sure that the name variable is set on the
-    // Dog instance. To do this we call the prototype as a regular function
-    // with this instance of Dog as  the context
+    // as we assign a new instance of Animal as prototype (see below) we still need to be sure that the 'name' variable
+    // is set on the Dog instance. To do this we call the Animal constructor function as a regular function with this
+    // instance of Dog as the context so the settings done in that function are applied to our instance of Dog
     Animal.call(this, name);
 };
 
-// use a new instance of Animal (without parameters) as prototype
-// for all instances of Dog
+// use a new instance of Animal (without parameters) as prototype for all instances of Dog. We supply null as the
+// name of the animal as we do not have it yet
 Dog.prototype = new Animal(null);
 
-// as we totaly replaced the prototype, we also changed the prototype's constructor. It
+// as we totaly replaced the prototype, we also changed the referebce to it's Constructor function. It
 // is good practice to change the constructor of the prototype back to the main constructor, as
 // leaving it might result in unexpected behavior
 Dog.prototype.constructor = Dog;
