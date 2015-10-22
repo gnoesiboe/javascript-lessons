@@ -1,4 +1,4 @@
-// to prevent callback functions from taking on the owner's context when called, we can bind another context to it
+// to prevent callback functions from taking on the owner's context when called, we can bind another context to it. We cannot use `apply` or `call` for this, as we don't control the execution of the function.
 
 var eventDispatcher = {
     callback: null,
@@ -15,7 +15,7 @@ var eventDispatcher = {
 
 var callback = function () {
 
-    // `this` in callback points to global object (or window in browser)
+    // `this` in callback points to global object (or window in browser) with no override
     console.log(this);
 };
 

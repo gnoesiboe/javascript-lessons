@@ -1,4 +1,4 @@
-// you can bind the context of functions to objects, to have the `this` keyword within the function point to that object
+// you can execute functions with another context than their own, using `apply` or `call`. You can use this to influence where `this` points to.
 
 var dutchGuy = {
     introText: 'hallo'

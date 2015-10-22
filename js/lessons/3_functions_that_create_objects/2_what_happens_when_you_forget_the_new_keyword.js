@@ -8,10 +8,8 @@ var SomeConstructor = function () {
 // logs the global (or window) object as 'this' within a global function, points to the global object
 var notAnInstance = SomeConstructor();
 
-// is undefined as nothing was constructed, as the 'new' keyword was not used
+// is undefined as the function has no return value and nothing was constructed, as the 'new' keyword was not used
 console.log(notAnInstance);
 
-
-// both log the created object
 var anInstance = new SomeConstructor();
-console.log(anInstance);
+console.log(anInstance); // logs the created object
